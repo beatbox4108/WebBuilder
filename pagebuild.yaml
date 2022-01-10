@@ -2,7 +2,7 @@
 root: "./root"
 built-data-root-path: "./docs"
 temprateroot: "./temprate"
-builderpath: "./pagebuilder"
+builderpath: "./WebBuilder"
 site-area: "./docs"
 disable-pattern:
   - ".*"
