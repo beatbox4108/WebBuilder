@@ -1,7 +1,8 @@
-
+version: "1.0.a1"
 root: "./root"
 built-data-root-path: "./docs"
 temprateroot: "./temprate"
+themeroot: "./theme"
 builderpath: "./WebBuilder"
 site-area: "./docs"
 disable-pattern:
@@ -10,14 +11,5 @@ disable-pattern:
 dateformat: "%m-%d-%y %H:%M"
 pagesettings:
   page: 
-    file: "./base.btpr"
-    replacer:
-      text: "<!-- buildertext -->"
-      date: "<!-- builderdate -->"
-      title: "<!-- buildertitle -->"
-      date_format: "%m-%d-%Y %H:%M"
-    pageplace: 
-      header: "./header.tpr"
-      footer: "./footer.tpr"
-      head: "./head.tpr"
+    theme: "page"
   
