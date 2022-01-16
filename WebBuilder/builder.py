@@ -4,6 +4,7 @@ import pathlib
 import glob
 import re
 import packaging.version
+import warnings
 class builder:
     def __init__(self):
         self.config=config.load()
@@ -12,11 +13,18 @@ class builder:
             self.version=packaging.version.parse(self.config["version"])
         else:
             self.version=packaging.version.parse("1.0.0")
+        self.version_check()
+        
     def version_check(self):
         if self.version<config.version:
-            raise RuntimeWarning(f"The WebBuilder's version is {config.version}. But configuration file version is {self.version}.\nThere are a lot of risks about the version that doesn't match.")
+            warnings.warn(f"The WebBuilder's version is {config.version}. But configuration file version is {self.version}.\nThere are a lot of risks about the version that doesn't match.",RuntimeWarning)
         elif self.version>config.version:
             raise RuntimeError(f"The WebBuilder's version is {config.version}. But configuration file version is {self.version}.\nThere are a lot of risks! Please update the WebBuilder!")
+        if config.version.is_devrelease:
+            warnings.warn(f"This WebBuilder is in development version! There are a lot of risks to use this!",RuntimeWarning)
+        if config.version.is_prerelease:
+            warnings.warn(f"This WebBuilder is in pre-release version! There are some risks to use this!",RuntimeWarning)
+
     def build(self):
         for f in self.filelist:
             is_match=False
