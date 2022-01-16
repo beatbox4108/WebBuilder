@@ -8,7 +8,8 @@
         <h1>Test Page!</h1>
         <main>
             <h2><!-- buildertitle --></h2>
-            <!-- builderdate -->
+            <p>Posted:<!-- builderdate --></p>
+            <p>Updated:<!-- builderupdatedate --></p>
             <article>
                 <!-- buildertext -->
             </article>
