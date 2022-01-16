@@ -1,2 +1,2 @@
 # WebBuilder
-Build the wabpages from markdown.
+Build the webpages from markdown.
