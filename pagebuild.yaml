@@ -1,4 +1,4 @@
-
+version: "1.0.0"
 root: "./root"
 built-data-root-path: "./docs"
 temprateroot: "./temprate"
