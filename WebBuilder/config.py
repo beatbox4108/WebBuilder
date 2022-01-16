@@ -23,6 +23,6 @@ class pageconf:
             self.themeconf=code
             if not isinstance(self.themeconf.get("root"),str):
                 self.themeconf["root"]=str(pathlib.Path(self.config["builderpath"])/self.config["temprateroot"])
-version=packaging.version.parse("1.0.a1")
+version=packaging.version.parse("1.0.1")
             
         
